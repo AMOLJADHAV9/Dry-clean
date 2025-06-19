@@ -18,6 +18,7 @@ import AdminRegister from './components/AdminRegister';
 import AdminDashboard from './components/AdminDashboard';
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 import RoleErrorPage from './components/RoleErrorPage';
+import Welcome from './components/Welcome';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,6 +32,7 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [role, setRole] = useState(null);
   const [roleError, setRoleError] = useState('');
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -60,6 +62,7 @@ function App() {
     return () => unsubscribe();
   }, [showAdminLogin, showAdminRegister]);
 
+  if (showWelcome) return <Welcome onExplore={() => setShowWelcome(false)} />;
   if (loading) return <div style={{textAlign:'center',marginTop:'3rem'}}>Loading...</div>;
   if (roleError) return <RoleErrorPage message={roleError} onGoHome={async () => { await signOut(auth); window.location.reload(); }} />;
 

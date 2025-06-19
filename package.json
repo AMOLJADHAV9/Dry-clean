@@ -1,8 +1,7 @@
 {
-  "name": "dryclean-web",
+  "name": "Dryclean",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AMOLJADHAV9.github.io/Dryclean-web",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -44,6 +43,4 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
-  
-
 }
