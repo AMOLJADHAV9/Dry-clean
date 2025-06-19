@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+section {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Remove default header styles */
+.App-header, .App-logo, .App-link {
+  display: none;
+}
